@@ -3,6 +3,7 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from typing import Optional, Dict, Any
 import yfinance as yf
+import numpy as np
 import pandas as pd
 from datetime import datetime, timedelta
 import uvicorn
@@ -79,7 +80,7 @@ async def get_stock_data(
     GET endpoint to fetch stock data
     
     Args:
-        ticker: Stock ticker symbol (e.g., AAPL, GOOGL)
+        ticker: Stock ticker symbol (e.g., AAPL, GOOGL, WBD)
         start_date: Optional start date (YYYY-MM-DD)
         end_date: Optional end date (YYYY-MM-DD)
     """
